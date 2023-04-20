@@ -1,0 +1,30 @@
+.dynamic-date {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #403F3F;
+    font-family: 'Poppins', sans-serif;
+}
+
+.latest {
+    background: crimson;
+    color: white;
+    border: none;
+    width: 110px;
+    height: 48px;
+}
+
+.move-news {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    color: #403F3F;
+}
+
+.user-image {
+    height: 41px;
+    width: 41px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin: 0 10px 0 0;
+}
