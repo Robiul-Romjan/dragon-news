@@ -1,9 +1,9 @@
 import React from 'react';
 import "./QZone.css";
 
-import qZone1 from "/qZone1.png";
-import qZone2 from "/qZone2.png";
-import qZone3 from "/qZone3.png";
+import qZone1 from "/images/qZone1.png";
+import qZone2 from "/images/qZone2.png";
+import qZone3 from "/images/qZone3.png";
 
 const QZone = () => {
     return (

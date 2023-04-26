@@ -1,14 +1,12 @@
 import React from 'react';
 import "./Header.css"
-import logo from "/logo.png";
+import logo from "/images/logo.png";
 import moment from 'moment';
 import Marquee from "react-fast-marquee";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom';
-import { Button } from 'bootstrap';
+
 
 const Header = () => {
     return (

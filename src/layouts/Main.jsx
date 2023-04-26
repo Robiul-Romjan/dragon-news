@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../pages/Shared/Header/Header';
 import Footer from '../pages/Shared/Footer/Footer';
 import LeftNav from '../pages/Shared/LeftNav/LeftNav';
-import Home from '../pages/Home/Home/Home';
 import RightNav from '../pages/Shared/RightNav/RightNav';
 import { Outlet } from 'react-router-dom';
 
@@ -17,7 +16,7 @@ const Main = () => {
                 <LeftNav />
             </div>
             <div className="col-lg-6">
-                <Home />
+                <Outlet />
             </div>
             <div className="col-lg-3">
                 <RightNav />

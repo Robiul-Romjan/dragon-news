@@ -1,0 +1,24 @@
+.category-title {
+    background: #E7E7E7;
+    border: 1px solid #E7E7E7;
+    border-radius: 5px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.national {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #403F3F;
+}
+
+.category-list {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #9F9F9F;
+    text-decoration: none;
+}
