@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import "./Category.css"
 import { useLoaderData, useParams } from 'react-router-dom';
 import NewsCard from '../NewsCard/NewsCard';
@@ -18,7 +18,7 @@ const Category = () => {
 
      
     return (
-        <div>
+        <div className='row'>
             {
                 catagories.map((singleNews)=> <NewsCard key={singleNews._id} singleNews={singleNews} />)
             }

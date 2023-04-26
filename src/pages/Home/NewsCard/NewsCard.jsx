@@ -1,10 +1,31 @@
 import React from 'react';
+import "./NewsCard.css"
+import { FaBookmark, FaShare } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const NewsCard = ({singleNews}) => {
+const NewsCard = ({ singleNews }) => {
+    const { _id, title, author, image_url, details } = singleNews;
 
     return (
-        <div>
-            <h2>{singleNews.title}</h2>
+        <div className='col-lg-12 mb-4'>
+            <div class="card">
+                <div class="card-header news-header d-flex align-items-center">
+                    <img src={author.img} alt="" />
+                    <div className='flex-grow-1 ms-3 mt-2'>
+                        <h5>{author.name}</h5>
+                        <p>{author.published_date}</p>
+                    </div>
+                    <div>
+                        <i><FaBookmark /></i>
+                        <i className='ms-3'><FaShare /></i>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{title}</h5>
+                    <img className='img-fluid' src={image_url} alt="" />
+                    {details.length > 250 ? <>{details.slice(0, 250)}..... <Link to={`/news/${_id}`}>Read More</Link></> : <>{details}</>}
+                </div>
+            </div>
         </div>
     );
 };
