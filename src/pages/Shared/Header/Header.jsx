@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "./Header.css"
 import logo from "/images/logo.png";
 import moment from 'moment';
@@ -6,9 +6,15 @@ import Marquee from "react-fast-marquee";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 
 const Header = () => {
+
+    const {user} = useContext(AuthContext);
+    console.log(user)
+
     return (
         <div>
             <div className="header-logo text-center mt-5">
@@ -29,15 +35,19 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
-                            <Nav.Link href="#features">Home</Nav.Link>
-                            <Nav.Link href="#pricing">About</Nav.Link>
-                            <Nav.Link href="#pricing">Carrer</Nav.Link>
+                            <Link className='nav-link' to="/category/0">Home</Link>
+                            <Link className='nav-link' to="/about">About</Link>
+                            <Link className='nav-link' to="/career">Career</Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">Profile</Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
-                            <button className='btn btn-dark'>Login</button>
-                            </Nav.Link>
+                            {
+                                user && <Nav.Link href="#deets">{user.displayName}</Nav.Link>
+                            }
+                            {
+                                user ?
+                                <Link className='btn btn-danger'>Log Out</Link>:
+                                <Link className='btn btn-danger' to="/login">Log In</Link>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./LeftNav.css"
 import { Link } from 'react-router-dom';
+import UnderLeft from './UnderLeft';
 
 const LeftNav = () => {
     const [categories, setCategories] = useState([]);
@@ -24,6 +25,7 @@ const LeftNav = () => {
                     </p>)
                 }
             </div>
+            <UnderLeft />
         </div>
     );
 };

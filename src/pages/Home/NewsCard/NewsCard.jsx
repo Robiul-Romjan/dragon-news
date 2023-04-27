@@ -8,8 +8,8 @@ const NewsCard = ({ singleNews }) => {
 
     return (
         <div className='col-lg-12 mb-4'>
-            <div class="card">
-                <div class="card-header news-header d-flex align-items-center">
+            <div className="card">
+                <div className="card-header news-header d-flex align-items-center">
                     <img src={author.img} alt="" />
                     <div className='flex-grow-1 ms-3 mt-2'>
                         <h5>{author.name}</h5>
@@ -20,8 +20,8 @@ const NewsCard = ({ singleNews }) => {
                         <i className='ms-3'><FaShare /></i>
                     </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">{title}</h5>
+                <div className="card-body">
+                    <h5 className="card-title">{title}</h5>
                     <img className='img-fluid' src={image_url} alt="" />
                     {details.length > 250 ? <>{details.slice(0, 250)}..... <Link to={`/news/${_id}`}>Read More</Link></> : <>{details}</>}
                 </div>
