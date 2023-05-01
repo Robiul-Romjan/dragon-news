@@ -1,17 +1,29 @@
 
-import React from 'react';
+import React, { useContext } from 'react';
 import "./RightNav.css"
 import ListGroup from 'react-bootstrap/ListGroup';
 import { FaFacebook, FaGithub, FaGoogle, FaInstagram, FaTwitter } from 'react-icons/fa';
 import QZone from '../QZone/QZone';
 import bg from "/images/bg.png";
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const RightNav = () => {
+    const {googleSignIn} = useContext(AuthContext);
+
+    const handleGoogleSignIn = () => {
+         googleSignIn()
+         .then(result => {
+            console.log(result.user)
+         })
+         .catch(error => {
+            console.log(error.message)
+         })
+    }
     return (
         <div>
             <h4 className='mb-3'>Login with</h4>
             <div className="login-with">
-                <button className='btn btn-outline-primary w-100 mb-3'><FaGoogle /> login with goggle </button>
+                <button onClick={handleGoogleSignIn} className='btn btn-outline-primary w-100 mb-3'><FaGoogle /> Login with goggle </button>
                 <button className='btn btn-outline-secondary w-100'><FaGithub /> login with github </button>
             </div>
             <div className="find-us-with mt-5">

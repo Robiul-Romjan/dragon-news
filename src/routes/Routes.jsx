@@ -4,6 +4,11 @@ import Home from "../pages/Home/Home/Home";
 import Category from "../pages/Home/Category/Category";
 import NewsLayout from "../layouts/NewsLayout";
 import SingleNews from "../pages/Home/SingleNews/SingleNews";
+import LoginLayout from "../layouts/LoginLayout";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
+import PrivateRoute from "./PrivateRoute";
+import Terms from "../pages/Shared/Terms/Terms";
 
 
 const router = createBrowserRouter([
@@ -29,8 +34,26 @@ const router = createBrowserRouter([
         children: [
             {
                 path: ":id",
-                element: <SingleNews />,
+                element: <PrivateRoute><SingleNews /> </PrivateRoute>,
                 loader: ()=> fetch("/news.json")
+            }
+        ]
+    },
+    {
+        path: "/",
+        element: <LoginLayout />,
+        children: [
+            {
+                path:"/login",
+                element: <Login />
+            },
+            {
+                path:"/register",
+                element: <Register />
+            },
+            {
+                path: "/terms",
+                element: <Terms />
             }
         ]
     }
