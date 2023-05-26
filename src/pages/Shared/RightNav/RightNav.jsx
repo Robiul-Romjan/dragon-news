@@ -8,7 +8,7 @@ import bg from "/images/bg.png";
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const RightNav = () => {
-    const {googleSignIn} = useContext(AuthContext);
+    const {googleSignIn, githubSignIn} = useContext(AuthContext);
 
     const handleGoogleSignIn = () => {
          googleSignIn()
@@ -18,13 +18,25 @@ const RightNav = () => {
          .catch(error => {
             console.log(error.message)
          })
+    };
+
+    const handleGithubSignIn = () => {
+        githubSignIn()
+        .then(result => {
+            console.log(result.user)
+        })
+        .catch(error => {
+            console.log(error.message)
+        })
     }
+
+
     return (
         <div>
             <h4 className='mb-3'>Login with</h4>
             <div className="login-with">
                 <button onClick={handleGoogleSignIn} className='btn btn-outline-primary w-100 mb-3'><FaGoogle /> Login with goggle </button>
-                <button className='btn btn-outline-secondary w-100'><FaGithub /> login with github </button>
+                <button onClick={handleGithubSignIn} className='btn btn-outline-secondary w-100'><FaGithub /> login with github </button>
             </div>
             <div className="find-us-with mt-5">
                 <h4 className='mb-3'>Find Us On</h4>
